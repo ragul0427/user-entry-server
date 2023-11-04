@@ -4,11 +4,14 @@ const userRouter=require("./Routes/userRoutes.js")
 const cors=require("cors")
 const mongoose = require('mongoose')
 require("dotenv").config()
+const cookieParser = require('cookie-parser');
 
+app.use(cookieParser());
 app.use(cors({
     credentials:true,
     origin:process.env.ORIGIN
 }))
+
 app.use(express.json())
 
 app.use('/',userRouter)
