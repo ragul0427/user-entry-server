@@ -4,7 +4,7 @@ const userRouter=require("./Routes/userRoutes.js")
 const cors=require("cors")
 const mongoose = require('mongoose')
 require("dotenv").config()
-console.log(process.env.MONGO_URI)
+
 app.use(cors({
     credentials:true,
     origin:process.env.ORIGIN
