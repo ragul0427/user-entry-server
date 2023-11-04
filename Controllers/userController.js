@@ -11,7 +11,6 @@ const createUser = async (req, res) => {
       return res.status(400).json({ error: "User already registered" });
     }
 
-    // Hash the password before storing it
     const hashedPassword = await bcrypt.hash(password, 10);
     await User.create({ ...req.body, password: hashedPassword });
     
