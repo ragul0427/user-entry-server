@@ -27,7 +27,7 @@ const getUser = async (req, res) => {
     const existingUser = await User.findOne({ email });
 
     if (!existingUser) {
-      return res.status(404).json({ message: "User not found. Register first." });
+      return res.status(404).json({ message: "User not found Register first..." });
     }
 
     const isPasswordValid = await bcrypt.compare(password, existingUser.password);
